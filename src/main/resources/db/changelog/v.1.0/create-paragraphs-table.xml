@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="create_table_paragraphs" author="ponomdo">
+        <!-- Создание таблицы paragraphs-->
+        <createTable tableName="paragraphs">
+            <!--Создаем поля -->
+            <column autoIncrement="true" name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="file_name" type="varchar(255)">
+            </column>
+            <column name="value" type="varchar(1000)">
+            </column>
+            <column name="line_number" type="int">
+            </column>
+            <column name="children" type="int[]">
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add-new-column-parent_id" author="ponomdo">
+        <addColumn tableName="paragraphs">
+            <column name="parent_id" type="int"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="paragraphs" baseColumnNames="parent_id"
+                                 constraintName="parent_id_child_id"
+                                 referencedTableName="paragraphs" referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="drop-column-children" author="ponomdo">
+        <dropColumn tableName="paragraphs" columnName="children"/>
+    </changeSet>
+
+    <changeSet id="add-sequence" author="ponomdo">
+        <createSequence sequenceName="seq_paragraphs" cycle="false" minValue="1" maxValue="9223372036854775807" startValue="1" incrementBy="1"/>
+    </changeSet>
+
+    <changeSet id="add-seq-to-id" author="ponomdo">
+        <update tableName="paragraphs">
+            <column name="id" valueSequenceNext="seq_paragraphs"/>
+        </update>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "901c2c7a-0fb9-4de9-ab85-23a2013093b7",
+		"name": "test_task_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28262741"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/paragraph",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/IdeaProjects/test_task/test_task/texts/example.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/paragraph",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"paragraph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/paragraph",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/IdeaProjects/test_task/test_task/texts/lots#.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/paragraph",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"paragraph"
+					]
+				},
+				"description": "некорректная вложенность"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/paragraph",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/IdeaProjects/test_task/test_task/texts/big.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/paragraph",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"paragraph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/paragraph",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/IdeaProjects/test_task/test_task/texts/check-mark.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/paragraph",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"paragraph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/paragraph/info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/paragraph/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"paragraph",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/paragraph/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/paragraph/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"paragraph",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
